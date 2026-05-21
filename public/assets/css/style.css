@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap'); 
+:root { --bg: #050816; --surface: #0d1324; --card: #111827; --border: #2b3548; --gold: #d4af37; --gold-soft: #f1d27a; --red: #d61f2c; --green: #00e5a0; --text: #f5f5f5; --muted: #7f8aa3; } 
+
+.logo-poker { width: 180px; display: block; margin: 0 auto 1.5rem auto; filter: drop-shadow( 0 0 20px rgba(212,175,55,0.35) ); transition: 0.3s ease; } 
+
+.logo-poker:hover { transform: scale(1.03); filter: drop-shadow( 0 0 28px rgba(212,175,55,0.5) ); } * { margin: 0; padding: 0; box-sizing: border-box; } 
+
+body { background: radial-gradient(circle at top, rgba(212,175,55,0.08), transparent 30%),
+    url('/poker-room/public/assets/img/logo.png');
+     linear-gradient( 180deg, #050816 0%, #02040c 100% ); color: var(--text); font-family: 'Syne', sans-serif; min-height: 100vh; padding: 2rem 1rem; }
+
+body::before { content: ''; position: fixed; inset: 0; background: radial-gradient( circle at top right, rgba(27, 26, 23, 0.08), transparent 25% ), radial-gradient( circle at bottom left, rgba(214,31,44,0.08), transparent 25% ); pointer-events: none; z-index: 0; } 
+
+.container { max-width: 1000px; margin: 0 auto; position: relative; z-index: 1; } 
+
+header { text-align: center; margin-bottom: 3rem; position: relative; } 
+
+.badge { display: inline-block; background: rgba(0,229,160,0.1); border: 1px solid rgba(0,229,160,0.3); color: var(--accent); font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 2px; margin-bottom: 1rem; }
+
+h1 { font-size: clamp(2rem,5vw,3.5rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; } 
+h1 span { color: var(--accent); } 
+
+.subtitle { color: var(--accent); font-family: 'DM Mono', monospace; font-size: 1.65rem; margin-top: 0.75rem;font-weight: 700; } 
+
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+
+@media (max-width: 640px) { .grid { grid-template-columns: 1fr; } } 
+
+.card { background: linear-gradient( 145deg, rgba(17,24,39,0.95), rgba(10,15,25,0.98) ); border: 1px solid rgba(212,175,55,0.18); border-radius: 18px; padding: 1.5rem; box-shadow: 0 0 20px rgba(0,0,0,0.35); backdrop-filter: blur(6px); } 
+
+.card-title { font-size: 0.75rem; font-family: 'DM Mono', monospace; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem; } 
+
+.card-title::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); } 
+
+label { display: block; font-size: 0.78rem; color: var(--muted); margin-bottom: 0.4rem; font-family: 'DM Mono', monospace; } 
+
+input, select { width: 100%; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-family: 'DM Mono', monospace; font-size: 0.9rem; padding: 0.65rem 0.9rem; outline: none; transition: border-color 0.2s; margin-bottom: 1rem; } 
+
+input:focus, select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(0,229,160,0.08); } 
+select option { background: var(--surface); } 
+
+.btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.65rem 1.4rem; border-radius: 8px; border: none; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: all 0.15s; letter-spacing: 0.02em; } .btn-primary { background: linear-gradient( 135deg, var(--gold), var(--gold-soft) ); color: #111; font-weight: 800; border: none; } 
+
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 18px rgba(212,175,55,0.4); } .btn-danger { background: transparent; color: var(--danger); border: 1px solid rgba(255,77,109,0.3); padding: 0.4rem 0.8rem; font-size: 0.75rem; } .btn-danger:hover { background: rgba(255,77,109,0.1); } 
+
+.alerta { padding: 0.85rem 1.1rem; border-radius: 8px; font-family: 'DM Mono', monospace; font-size: 0.82rem; margin-bottom: 1.5rem; border-left: 3px solid; } 
+
+.alerta.exito { background: rgba(0,229,160,0.08); border-color: var(--success); color: var(--success); } 
+
+.alerta.error { background: rgba(255,77,109,0.08); border-color: var(--danger); color: var(--danger); } 
+
+.alerta.info { background: rgba(91,106,240,0.08); border-color: var(--info); color: var(--info); } 
+
+.resumen-bar { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; } 
+
+.resumen-item { flex: 1; min-width: 140px; background: linear-gradient( 145deg, rgba(17,24,39,0.96), rgba(10,15,25,1) ); border: 1px solid rgba(212,175,55,0.15); border-radius: 16px; padding: 1rem 1.25rem; } 
+
+.resumen-label { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.35rem; } 
+
+.resumen-valor { font-size: 1.7rem; font-weight: 800; color: var(--gold-soft); letter-spacing: -0.02em; } 
+
+.usuarios-section { margin-top: 2rem; } 
+
+.usuario-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 1.25rem; overflow: hidden; } 
+
+.usuario-header { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.25rem; background: var(--surface); border-bottom: 1px solid var(--border); gap: 1rem; flex-wrap: wrap; } 
+
+.usuario-nombre { font-weight: 700; font-size: 1rem; letter-spacing: -0.01em; } .usuario-tel { font-family: 'DM Mono', monospace; font-size: 0.75rem; color: var(--muted); margin-top: 0.2rem; } 
+
+.usuario-tel span { color: var(--accent2); } 
+.usuario-stats { display: flex; gap: 1.5rem; font-family: 'DM Mono', monospace; font-size: 0.78rem; color: var(--muted); } 
+.stat-val { color: var(--accent); font-weight: 500; } 
+.usuario-actions { display: flex; gap: 0.5rem; align-items: center; } 
+.ingresos-table { width: 100%; border-collapse: collapse; font-family: 'DM Mono', monospace; font-size: 0.82rem; } 
+.ingresos-table th { text-align: left; padding: 0.7rem 1.25rem; color: var(--muted); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 1px solid var(--border); background: rgba(0,0,0,0.2); } 
+
+.ingresos-table td { padding: 0.7rem 1.25rem; border-bottom: 1px solid rgba(42,42,50,0.5); color: var(--text); } 
+
+.ingresos-table tr:last-child td { border-bottom: none; } 
+
+.ingresos-table tr:hover td { background: rgba(212,175,55,0.06); } 
+
+.monto-cell { color: var(--accent); font-weight: 500; } 
+
+.fecha-cell { color: var(--muted); font-size: 0.75rem; } 
+
+.total-row td { font-weight: 700; background: rgba(0,229,160,0.04); color: var(--accent); border-top: 1px solid rgba(0,229,160,0.2) !important; } 
+
+.empty-state { padding: 2rem; text-align: center; color: var(--muted); font-family: 'DM Mono', monospace; font-size: 0.82rem; } 
+
+.no-data { text-align: center; padding: 3rem; color: var(--muted); font-family: 'DM Mono', monospace; font-size: 0.85rem; border: 1px dashed var(--border); border-radius: 12px; } 
+
+.hint { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--muted); margin-top: -0.6rem; margin-bottom: 1rem; }
