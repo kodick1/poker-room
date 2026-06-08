@@ -1,8 +1,11 @@
 <?php
 
-require_once '../app/controllers/UsuarioController.php';
+use Illuminate\Support\Facades\Route;
 
-$controller = new UsuarioController();
+Route::inertia('/', 'welcome')->name('home');
 
-$controller->index();
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::inertia('dashboard', 'dashboard')->name('dashboard');
+});
 
+require __DIR__.'/settings.php';
