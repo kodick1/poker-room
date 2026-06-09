@@ -9,19 +9,23 @@ import Gallery from '@/components/Gallery';
 import LocationSection from '@/components/LocationSection';
 import ScheduleSection from '@/components/ScheduleSection';
 import Footer from '@/components/Footer';
+import FeaturesSection from '@/components/FeaturesSection';
+import { NavMain } from '@/components/nav-main';
 
 export default function Welcome() {
     const { auth } = usePage().props;
 
     return (
         <>
-            <Head title="Welcome" />
-            <div className="min-h-screen bg-[var(--rf-white)] text-[var(--rf-black)] dark:bg-[var(--rf-black)] dark:text-[var(--rf-white)]">
+            <Head title="Royal-Flush" />
+            <NavMain/>
+            <div className="min-h-screen bg-[var(--rf-white)] text-[var(--rf-black)] dark:bg-[var(--rf-white)] dark:text-[var(--rf-white)]">
+                
                 <HeroSection />
 
                 <main className="mx-auto max-w-6xl px-6 py-10">
-                    <StatsCards />
-
+                     <StatsCards />
+                        <FeaturesSection />
                     <section className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-3">
                         <div className="col-span-2">
                             <TournamentCard />
