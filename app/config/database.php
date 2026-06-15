@@ -4,7 +4,7 @@ class Database
 {
     private $host = 'localhost';
 
-    private $db_name = 'poker_room';
+    private $db_name = 'poker-room-rf';
 
     private $username = 'root';
 
